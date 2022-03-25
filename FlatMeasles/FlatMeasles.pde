@@ -2,6 +2,7 @@
 int smallerDisplayDimension;
 float rectFaceX, rectFaceY, rectFacedisplayWidth, rectFacedisplayHeight; 
 float faceX, faceY, faceDiameter;
+float leftEyeX, leftEyeY, rightEyeX, rightEye, eyeDiameter;
 //
 //Display Geometry 
 fullScreen(); //size(600,400)
@@ -29,6 +30,11 @@ rectFacedisplayHeight = smallerDisplayDimension;
 faceX = displayWidth*1/2;
 faceY = displayHeight*1/2;
 faceDiameter = smallerDisplayDimension;
+leftEyeX = ;
+rightEyeX = ;
+leftEyeY = ;
+rightEyeY = ;
+eyeDiameter = ;
 //
 //Face: Circle = Inscribing a Circle in a Square
 //Center a circle on display orientation
@@ -37,9 +43,11 @@ ellipse(faceX, faceY, faceDiameter, faceDiameter);
 //
 //Left Eye
 //rect();
+ellipse(leftEyeX, leftEyeY, eyeDiameter, eyeDiameter);
 //
 //Right Eye
 //rect();
+ellipse(rightEyeX, rightEyeY, eyeDiameter, eyeDiameter);
 //
 //Nose
 //rect();
