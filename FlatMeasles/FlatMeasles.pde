@@ -2,7 +2,7 @@
 int smallerDisplayDimension;
 float rectFaceX, rectFaceY, rectFacedisplayWidth, rectFacedisplayHeight; 
 float faceX, faceY, faceDiameter;
-float leftEyeX, leftEyeY, rightEyeX, rightEye, eyeDiameter;
+float leftEyeX, leftEyeY, rightEyeX, rightEyeY, eyeDiameter;
 //
 //Display Geometry 
 fullScreen(); //size(600,400)
@@ -30,11 +30,11 @@ rectFacedisplayHeight = smallerDisplayDimension;
 faceX = displayWidth*1/2;
 faceY = displayHeight*1/2;
 faceDiameter = smallerDisplayDimension;
-leftEyeX = ;
-rightEyeX = ;
-leftEyeY = ;
-rightEyeY = ;
-eyeDiameter = ;
+leftEyeX = displayWidth*3/8;
+rightEyeX = displayWidth*5/8;
+leftEyeY = displayHeight*5/16;
+rightEyeY = leftEyeY; //Best Practice: change one line of code 
+eyeDiameter = smallerDisplayDimension*1/4;
 //
 //Face: Circle = Inscribing a Circle in a Square
 //Center a circle on display orientation
