@@ -1,5 +1,5 @@
 //Global Variables 
-int smallerDisplayDimension;
+int reset, smallerDisplayDimension, mouthOpen;
 float rectFaceX, rectFaceY, rectFacedisplayWidth, rectFacedisplayHeight; 
 float faceX, faceY, faceDiameter;
 float leftEyeX, leftEyeY, rightEyeX, rightEyeY, eyeDiameter;
@@ -25,6 +25,7 @@ println("Display Orientation:", orientation);
 //
 //Variable Population
 smallerDisplayDimension = displayHeight; //ALWAYS in Landscape
+reset = smallerDisplayDimension / smallerDisplayDimension; 
 rectFaceX = (displayWidth*1/2) - (smallerDisplayDimension*1/2);
 rectFaceY = displayHeight*0;
 rectFacedisplayWidth = smallerDisplayDimension;
@@ -41,6 +42,7 @@ mouthX1 = leftEyeX;
 mouthY1 = displayHeight*3/4;
 mouthX2 = rightEyeX;
 mouthY2 = mouthY1;
+mouthOpen = smallerDisplayDimension*1/8;
 xNose1 = faceX;
 yNose1 = displayHeight*1/2;
 xNose2 = faceX - leftEyeY*1/3;
@@ -67,6 +69,9 @@ triangle(xNose1, yNose1, xNose2, yNose2, xNose3, yNose3);
 //
 //Mouth
 //rect();
+strokeWeight(mouthOpen);
 line(mouthX1, mouthY1, mouthX2, mouthY2);
+strokeWeight(reset);
+//
 //Measle
 //rect();
