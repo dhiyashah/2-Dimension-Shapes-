@@ -9,6 +9,8 @@ float xNose1, yNose1, xNose2, yNose2, xNose3, yNose3;
 //Display Geometry 
 fullScreen(); //size(600,400)
 println(displayWidth, displayHeight);
+int appWidth = displayWidth, appHeight = displayHeight;
+println(appWidth, appHeight);
 //Display Orientation: a few comparisons for IFs
 //Computer Tells us the orientation, important for Cell Phone Orientation
 //if ( width >= height ) {println("Landscape or Square");} else {println("Portrait");}
@@ -74,4 +76,11 @@ line(mouthX1, mouthY1, mouthX2, mouthY2);
 strokeWeight(reset);
 //
 //Measle
+float measleX = appWidth*1/2;
+float measleY = appHeight*1/2;
+float measleDiameter = smallerDisplayDimension*1/100; //Very small measle
+color red=#FF0000, measleColour=red; //Note: need range here too
 //rect();
+//random values given other variables (similar to button code)
+fill(measleColour);
+ellipse( measleX, measleY, measleDiameter, measleDiameter );
