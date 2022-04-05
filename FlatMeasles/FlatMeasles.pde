@@ -2,7 +2,6 @@
 int reset, smallerDisplayDimension, mouthOpen;
 float rectFaceX, rectFaceY, rectFacedisplayWidth, rectFacedisplayHeight; 
 float faceX, faceY, faceDiameter;
-float rectLeftEyeX, rectLeftEyeY, rectLeftEyedisplayWidth, rectLeftEyedisplayHeight, rectRightEyeX, rectRightEyeY, rectRightEyedisplayWidth, rectRightEyedisplayHeight;
 float leftEyeX, leftEyeY, rightEyeX, rightEyeY, eyeDiameter;
 float mouthX1, mouthY1, mouthX2, mouthY2;
 float xNose1, yNose1, xNose2, yNose2, xNose3, yNose3;
