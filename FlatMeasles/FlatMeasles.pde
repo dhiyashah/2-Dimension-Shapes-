@@ -2,6 +2,7 @@
 int reset, smallerDisplayDimension, mouthOpen;
 float rectFaceX, rectFaceY, rectFacedisplayWidth, rectFacedisplayHeight; 
 float faceX, faceY, faceDiameter;
+float rectLeftEyeX, rectLeftEyeY, rectLeftEyedisplayWidth, rectLeftEyedisplayHeight, rectRightEyeX, rectRightEyeY, rectRightEyedisplayWidth, rectRightEyedisplayHeight;
 float leftEyeX, leftEyeY, rightEyeX, rightEyeY, eyeDiameter;
 float mouthX1, mouthY1, mouthX2, mouthY2;
 float xNose1, yNose1, xNose2, yNose2, xNose3, yNose3;
@@ -58,19 +59,21 @@ rect(rectFaceX, rectFaceY, rectFacedisplayWidth, rectFacedisplayHeight);
 ellipse(faceX, faceY, faceDiameter, faceDiameter);
 //
 //Left Eye
-//rect();
+rect(leftEyeX-eyeDiameter*1/2, leftEyeY-eyeDiameter*1/2, eyeDiameter, eyeDiameter);
 ellipse(leftEyeX, leftEyeY, eyeDiameter, eyeDiameter);
 //
 //Right Eye
-//rect();
+rect(rightEyeX-eyeDiameter*1/2, rightEyeY-eyeDiameter*1/2, eyeDiameter, eyeDiameter);
 ellipse(rightEyeX, rightEyeY, eyeDiameter, eyeDiameter);
 //
 //Nose
-//rect();
+rect(xNose2, yNose1, xNose3-xNose2, yNose3-yNose1);
 triangle(xNose1, yNose1, xNose2, yNose2, xNose3, yNose3); 
 //
 //Mouth
-//rect();
+int mouthWidth = int ( mouthX2 - mouthX1 );
+int mouthHeight = mouthOpen;
+rect(mouthX1-mouthHeight*1/2, mouthY1-mouthHeight*1/2, mouthWidth+mouthOpen, mouthHeight);
 strokeWeight(mouthOpen);
 line(mouthX1, mouthY1, mouthX2, mouthY2);
 strokeWeight(reset); //reset to 1 pixel
@@ -81,7 +84,15 @@ float measleRadius = measleDiameter*1/2;
 println( measleRadius );
 float measleX = random( rectFaceX+measleRadius , ((rectFaceX+rectFacedisplayWidth ) -measleRadius ) ); //*0 = top left corner, no# = right bottom corner, *1/2 = center
 float measleY = random( rectFaceY+measleRadius , ((rectFaceY+rectFacedisplayHeight ) -measleRadius ) );
-color red=#FF0000, measleColour=red, whiteReset=#000000; //Note: need range here too
+Boolean nightMode=false; //Note:IF-ELSE similar to ternary operator
+//color red=#FF0000, measleColour=red, whiteReset=#000000; //Note: need range here too
+color measleColour = ( nightMode==false ) ? color ( 255, random(0,70), random(0,100) ) : color ( 255, random(0,70), 0 ); //ternary operator for day:night, color(r, g, b) 
+color whiteReset=#000000;
+
+//
+//
+//
+//
 //rect();
 //random values given other variables (similar to button code)
 noStroke(); //Shape Outline
